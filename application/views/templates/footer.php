@@ -1,5 +1,7 @@
-	
-<br>
-	<em>&copy; 2015</em>
+		</div>
+		<div id="footer" class="block">
+			Кудаков Андрей
+		</div>
+	</div>
 </body>
 </html>
