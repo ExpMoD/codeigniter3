@@ -7,6 +7,8 @@ class Pages extends CI_Controller {
 	public function __construct()
 	{
 	    parent::__construct();
+        $this->load->database();
+        $this->load->library("loadlibs");
 	}
 
 	public function index($page = 'home')
@@ -19,10 +21,13 @@ class Pages extends CI_Controller {
 
 	    $data['title'] = ucfirst($page); // Capitalize the first letter
 
+        $data['libs'] = $this->loadlibs;
 
 		$this->load->view('templates/header', $data);
-		$this->load->view('pages/'.$page, $data);
-		$this->load->database();
+        /*$this->load->database();
+        $this->db->select('*')->from('statements');
+        $data['table'] = $this->db->get();*/
+        $this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/footer', $data);
 	}
 	
